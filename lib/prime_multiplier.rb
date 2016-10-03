@@ -1,5 +1,6 @@
-require "prime_multiplier/version"
+require 'prime_multiplier/version'
 
 module PrimeMultiplier
-  # Your code goes here...
+  class OptionParser
+  end
 end
