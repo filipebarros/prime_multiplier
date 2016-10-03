@@ -1,0 +1,11 @@
+#!/usr/bin/env ruby
+# frozen_string_literal: true
+
+require 'prime_multiplier'
+
+cli = PrimeMultiplier::CommandLineInterface.new
+cli.validate_cli_options
+
+primes = cli.generate_primes
+
+cli.print(primes)
