@@ -9,7 +9,7 @@ module PrimeMultiplier
   # the appropriate methods to deal with prime number generation
   # and to print the actual multiplication table
   class CommandLineInterface
-    COUNT_DESCRIPTION = 'Number of prime numbers to be shown (REQUIRED)'
+    COUNT_DESCRIPTION = 'Prime numbers to be shown (REQUIRED)'
     HELP_DESCRIPTION = 'This help menu'
 
     def initialize
