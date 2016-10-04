@@ -7,6 +7,10 @@ module PrimeMultiplier
     class << self
       def generate(count)
         return [] if count < 1
+        # this is used to obtain the last prime number so we can set it as
+        # the max ceiling value when calculating the primes until that number
+        # If this can't be used we could set an arbitrary high value to run
+        # or add a breakpoint if we have enough values
         prime = ::Prime.first(count).last
 
         @primes = primes_until(prime)
