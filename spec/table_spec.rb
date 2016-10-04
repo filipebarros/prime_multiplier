@@ -34,6 +34,6 @@ describe PrimeMultiplier::Table do
       '+---+----+----+----+----+'
     ].join("\n")
 
-    expect(described_class.print(prime_array)).to eq(expected_output)
+    expect(described_class.generate(prime_array)).to eq(expected_output)
   end
 end
