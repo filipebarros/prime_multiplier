@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+
 require 'optparse'
 require 'prime_multiplier/prime'
 require 'prime_multiplier/table'

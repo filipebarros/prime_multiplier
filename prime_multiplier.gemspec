@@ -1,6 +1,6 @@
-# coding: utf-8
 # frozen_string_literal: true
-lib = File.expand_path('../lib', __FILE__)
+
+lib = File.expand_path('lib', __dir__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 require 'prime_multiplier/version'
 
@@ -14,7 +14,7 @@ Gem::Specification.new do |spec|
   spec.homepage = 'https://example.com'
   spec.license = 'MIT'
 
-  spec.files = Dir.glob('{bin,lib}/**/*') + %w(LICENSE.txt README.md)
+  spec.files = Dir.glob('{bin,lib}/**/*') + %w[LICENSE.txt README.md]
   spec.bindir = 'exe'
   spec.executables = spec.files.grep(%r{^exe/}) { |f| File.basename(f) }
   spec.require_paths = ['lib']
@@ -25,4 +25,6 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency 'rake'
   spec.add_development_dependency 'rspec'
   spec.add_development_dependency 'rubocop'
+  spec.add_development_dependency 'rubocop-performance'
+  spec.add_development_dependency 'rubocop-rspec'
 end
