@@ -1,5 +1,7 @@
 # PrimeMultiplier
 
+[![Build Status](https://cloud.drone.io/api/badges/filipebarros/prime_multiplier/status.svg)](https://cloud.drone.io/filipebarros/prime_multiplier)
+
 This is a small ruby program to print a table of the multiplication of the first `n` prime numbers.
 
 ## Usage
