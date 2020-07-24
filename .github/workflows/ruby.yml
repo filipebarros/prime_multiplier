@@ -14,14 +14,14 @@ jobs:
         ruby-version: 2.7
     - name: Install bundler
       run: gem install bundler
-    - name: Setup bundler folder
-      run: bundle config path vendor/bundle
     - name: Cache Gems
       uses: actions/cache@v2
       with:
         path: vendor/bundle
-        key: prime-multiplier-v1-${{ runner.os }}-gem-${{ hashFiles('**/Gemfile.lock') }}
-        restore-keys: prime-multiplier-v1-${{ runner.os }}-gem-
+        key: prime-multiplier-v1-${{ runner.os }}-${{ hashFiles('**/Gemfile.lock') }}
+        restore-keys: prime-multiplier-v1-${{ runner.os }}-
+    - name: Setup bundler path
+      run: bundle config path vendor/bundle
     - name: Install gems
       run: bundle install --jobs 4 --retry 3
     - name: Run Rubocop
@@ -40,14 +40,14 @@ jobs:
         ruby-version: 2.7
     - name: Install bundler
       run: gem install bundler
-    - name: Setup bundler folder
-      run: bundle config path vendor/bundle
     - name: Cache Gems
       uses: actions/cache@v2
       with:
         path: vendor/bundle
-        key: prime-multiplier-v1-${{ runner.os }}-gem-${{ hashFiles('**/Gemfile.lock') }}
-        restore-keys: prime-multiplier-v1-${{ runner.os }}-gem-
+        key: prime-multiplier-v1-${{ runner.os }}-${{ hashFiles('**/Gemfile.lock') }}
+        restore-keys: prime-multiplier-v1-${{ runner.os }}-
+    - name: Setup bundler path
+      run: bundle config path vendor/bundle
     - name: Install gems
       run: bundle install --jobs 4 --retry 3
     - name: Run Specs
