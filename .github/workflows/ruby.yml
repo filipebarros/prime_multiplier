@@ -8,22 +8,10 @@ jobs:
 
     steps:
       - uses: actions/checkout@v3
-      - name: Set up Ruby 3.2.2
-        uses: actions/setup-ruby@v1
+      - name: Set up Ruby
+        uses: ruby/setup-ruby@v1
         with:
-          ruby-version: 3.2.2
-      - name: Install bundler
-        run: gem install bundler
-      - name: Cache Gems
-        uses: actions/cache@v2
-        with:
-          path: vendor/bundle
-          key: prime-multiplier-v1-${{ runner.os }}-${{ hashFiles('**/Gemfile.lock') }}
-          restore-keys: prime-multiplier-v1-${{ runner.os }}-
-      - name: Setup bundler path
-        run: bundle config path vendor/bundle
-      - name: Install gems
-        run: bundle install --jobs 4 --retry 3
+          bundler-cache: true
       - name: Run Rubocop
         run: bundle exec rubocop --parallel
 
@@ -34,21 +22,9 @@ jobs:
 
     steps:
       - uses: actions/checkout@v3
-      - name: Set up Ruby 3.2.2
-        uses: actions/setup-ruby@v1
+      - name: Set up Ruby
+        uses: ruby/setup-ruby@v1
         with:
-          ruby-version: 3.2.2
-      - name: Install bundler
-        run: gem install bundler
-      - name: Cache Gems
-        uses: actions/cache@v2
-        with:
-          path: vendor/bundle
-          key: prime-multiplier-v1-${{ runner.os }}-${{ hashFiles('**/Gemfile.lock') }}
-          restore-keys: prime-multiplier-v1-${{ runner.os }}-
-      - name: Setup bundler path
-        run: bundle config path vendor/bundle
-      - name: Install gems
-        run: bundle install --jobs 4 --retry 3
+          bundler-cache: true
       - name: Run Specs
         run: bundle exec rspec
