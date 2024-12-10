@@ -10,7 +10,7 @@ module PrimeMultiplier
         header = generate_header(array)
         rows = generate_rows(array)
 
-        table = Terminal::Table.new(headings: header, rows: rows)
+        table = Terminal::Table.new(headings: header, rows:)
 
         table.to_s
       end
@@ -30,7 +30,7 @@ module PrimeMultiplier
         array.each do |line|
           row = [line]
           array.each do |column|
-            row << line * column
+            row << (line * column)
           end
           rows << row
         end

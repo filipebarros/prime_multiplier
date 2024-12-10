@@ -17,12 +17,12 @@ describe PrimeMultiplier::Prime do
   end
 
   it 'returns array with the first `1` prime number' do
-    first_prime = ::Prime.first(1)
+    first_prime = Prime.first(1)
     expect(described_class.generate(1)).to eq(first_prime)
   end
 
   it 'returns array with the first `10` prime numbers' do
-    first_ten_primes = ::Prime.first(10)
+    first_ten_primes = Prime.first(10)
     expect(described_class.generate(10)).to eq(first_ten_primes)
   end
 end
